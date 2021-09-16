@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist&display=swap');
+
+$white-color: #f0eeee;
+$blue-color: #2c68b5;
+$blue-color--hover: #3e71b4;
+
+:root {
+  font-size: 62.5%;
+
+  body {
+    background: $white-color;
+    color: $blue-color;
+    font-family: 'Urbanist', sans-serif;
+  }
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

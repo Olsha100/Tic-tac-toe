@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic tac toe</title>
+    <link rel="stylesheet" href="index_style.css" />
+    <script src="index.js" async defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <header><h1 class="container__header">Tic tac toe</h1></header>
+      <label class="container__input-label" for="player_1">Player 1</label>
+      <input
+        type="text"
+        autocomplete="off"
+        id="player_1"
+        class="container__input"
+      />
+
+      <label class="container__input-label" for="player_2">Player 2</label>
+      <input
+        type="text"
+        autocomplete="off"
+        id="player_2"
+        class="container__input"
+      />
+      <button class="container__button">Play</button>
+      <div class="container__alert-message container__alert-message--hidden">
+        Enter player names before the game
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,197 @@
+@use 'common-styles';
+
+@mixin text-position($font-size: 2rem) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: $font-size;
+}
+
+.main-container {
+  height: 100vh;
+
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  gap: 0.5rem;
+  grid-template-areas:
+    'new-game-button'
+    'player_1'
+    'game-container'
+    'player_2'
+    'reset-button';
+  justify-items: center;
+  align-items: center;
+
+  .game-container {
+    grid-area: game-container;
+
+    width: 30rem;
+    min-height: 30rem;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 0.5rem;
+
+    &__box {
+      @include text-position($font-size: 3rem);
+      border: 2px solid common-styles.$blue-color;
+      border-radius: 13rem;
+
+      background-color: common-styles.$white-color;
+
+      cursor: pointer;
+    }
+  }
+
+  .button {
+    @include text-position;
+    width: 30rem;
+    height: 4rem;
+    margin: 1.4rem;
+
+    border: none;
+    border-radius: 5rem;
+
+    cursor: pointer;
+  }
+
+  .new-game-button {
+    grid-area: new-game-button;
+    align-self: end;
+
+    color: common-styles.$white-color;
+    background: common-styles.$blue-color;
+  }
+
+  .new-game-button:hover {
+    background: common-styles.$blue-color--hover;
+  }
+
+  .reset-button {
+    grid-area: reset-button;
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    border: 2px solid common-styles.$blue-color;
+
+    text-decoration: none;
+    color: common-styles.$blue-color;
+  }
+
+  .reset-button:hover {
+    color: common-styles.$white-color;
+    background: common-styles.$blue-color--hover;
+  }
+
+  .player-container {
+    min-width: 19rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+
+    text-align: center;
+    font-size: 2rem;
+
+    &__player-turn {
+      @include text-position;
+
+      width: 23rem;
+      height: 3.5rem;
+
+      border-radius: 3.5rem;
+
+      color: common-styles.$white-color;
+      background: common-styles.$blue-color;
+    }
+    &__player-name {
+      margin: 1.3rem 0;
+
+      font-size: 120%;
+    }
+
+    &__player-score-box {
+      display: flex;
+      justify-content: center;
+
+      font-size: 2rem;
+
+      min-height: 3rem;
+
+      border: 2px solid common-styles.$blue-color;
+      border-radius: 3rem;
+    }
+  }
+  #player_1 {
+    grid-area: player_1;
+  }
+  #player_2 {
+    grid-area: player_2;
+  }
+}
+
+@media screen and (min-width: 30em) {
+  .main-container {
+    .game-container {
+      width: 40rem;
+      min-height: 40rem;
+    }
+
+    .button {
+      width: 40rem;
+      height: 5rem;
+
+      margin: 2rem;
+    }
+
+    .player-container {
+      margin: 0.5rem 0;
+      &__player-name {
+        margin: 2rem 0;
+
+        font-size: 180%;
+      }
+
+      &__player-score-box {
+        display: block;
+
+        font-size: 2.5rem;
+
+        min-height: 4rem;
+
+        border-radius: 4rem;
+      }
+    }
+  }
+}
+@media screen and (min-width: 60em) {
+  .main-container {
+    grid-template-areas:
+      '. new-game-button .'
+      'player_1 game-container player_2'
+      '. reset-button .';
+    .new-game-button {
+      grid-area: new-game-button;
+      align-self: end;
+    }
+
+    .reset-button {
+      grid-area: reset-button;
+      align-self: start;
+    }
+
+    #player_1 {
+      grid-area: player_1;
+      justify-self: end;
+    }
+    #player_2 {
+      grid-area: player_2;
+      justify-self: start;
+    }
+  }
+}

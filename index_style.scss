@@ -1,0 +1,66 @@
+@use 'common-styles';
+
+.container {
+  height: 100vh;
+  width: 100vw;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__header {
+    margin-bottom: 2rem;
+
+    font-size: 5rem;
+  }
+
+  &__input-label {
+    font-size: 2rem;
+  }
+  &__input {
+    width: 22rem;
+    height: 4rem;
+    margin: 1rem;
+    padding: 1rem;
+
+    border: 1px solid common-styles.$blue-color;
+    border-radius: 2rem;
+
+    background: common-styles.$white-color;
+    color: common-styles.$blue-color;
+
+    font-size: 1.8rem;
+    text-align: right;
+  }
+
+  &__button {
+    width: 15rem;
+    height: 4rem;
+
+    margin-top: 1rem;
+
+    border: none;
+    border-radius: 1.8rem;
+
+    background: common-styles.$blue-color;
+    color: common-styles.$white-color;
+
+    font-size: 2rem;
+  }
+  &__button:hover {
+    background-color: common-styles.$blue-color--hover;
+  }
+  &__alert-message {
+    margin: 1rem;
+
+    color: common-styles.$blue-color;
+
+    font-size: 2rem;
+    text-align: center;
+
+    &--hidden {
+      color: transparent;
+    }
+  }
+}
